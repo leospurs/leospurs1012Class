@@ -75,12 +75,25 @@ public class Contact {
 	}
 	
 	public void printAll(Contact contact) {
-		System.out.println("이름: " + contact.getName());
-		System.out.println("전화번호: " + contact.getPhoneNum());
-		System.out.println("이메일: " + contact.getEmail());
-		System.out.println("주소: " + contact.getAddress());
-		System.out.println("생일: " + contact.getBirthday());
-		System.out.println("그룹: " + contact.getGroup());
+		
+		System.out.println("=============================");
+		System.out.println(contact.getName() + " 님의 정보");
+		System.out.println("=============================");
+		System.out.println();
+		System.out.println("전화번호");
+		System.out.println("------------------------------");
+		System.out.println(contact.getPhoneNum());
+		System.out.println("------------------------------");
+		System.out.println("이메일");
+				
+		System.out.println(contact.getEmail());
+		System.out.println("주소");
+		System.out.println(contact.getAddress());
+		System.out.println("생일" );
+		System.out.println(contact.getBirthday());
+		System.out.println("그룹");
+		System.out.println(contact.getGroup());
+		System.out.println("=============================");
 	}
 	
 	public void insert(Contact contact, Scanner scanner) {
