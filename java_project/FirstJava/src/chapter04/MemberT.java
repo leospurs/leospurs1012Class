@@ -31,7 +31,7 @@ public class MemberT {
 		public void checkUp(int birthYear) {
 			
 			// 나이 연산
-			int age = 2021 - birthYear - 1 ;
+			int age = 2021 - birthYear - 1 ; 
 			
 			// 올해 년도 구하기
 			int year = Calendar.getInstance().get(Calendar.YEAR);
