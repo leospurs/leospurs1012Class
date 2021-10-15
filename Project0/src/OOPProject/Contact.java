@@ -10,11 +10,9 @@ public class Contact {
 	private String address;
 	private String birthday;
 	private String group;
-	private Scanner scanner;
 	
-	public void setScanner(Scanner scanner) {
-		this.scanner = scanner;
-	}
+	
+	
 
 	public String getName() {
 		return name;
