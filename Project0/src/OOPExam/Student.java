@@ -55,9 +55,9 @@ public class Student {
 		mathavg = mathsum / (float)arr.length;
 		
 		System.out.println("===========================");
-		System.out.println("국어 점수 평균" + koravg + "점");
-		System.out.println("영어 점수 평균" + engavg + "점");
-		System.out.println("수학 점수 평균" + engavg + "점");
+		System.out.println("국어 점수 평균: " + koravg + "점");
+		System.out.println("영어 점수 평균: " + engavg + "점");
+		System.out.println("수학 점수 평균: " + engavg + "점");
 		
 
 	}
