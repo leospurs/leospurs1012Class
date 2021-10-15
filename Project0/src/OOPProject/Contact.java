@@ -79,16 +79,17 @@ public class Contact {
 		System.out.println("=============================");
 		System.out.println();
 		System.out.println("전화번호");
-		System.out.println("------------------------------");
 		System.out.println(contact.getPhoneNum());
 		System.out.println("------------------------------");
 		System.out.println("이메일");
-				
 		System.out.println(contact.getEmail());
+		System.out.println("------------------------------");
 		System.out.println("주소");
 		System.out.println(contact.getAddress());
+		System.out.println("------------------------------");
 		System.out.println("생일" );
 		System.out.println(contact.getBirthday());
+		System.out.println("------------------------------");
 		System.out.println("그룹");
 		System.out.println(contact.getGroup());
 		System.out.println("=============================");
