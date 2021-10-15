@@ -1,6 +1,6 @@
 package OOPExam;
 
-public class Student {
+public class Score {
 	public static void main(String[] args) {
 //		1. 국어, 영어, 수학 점수 10개씩을 저장하는 배열을 정의하고 점수를 모두 출력하고, 
 //		평균 점수를 출력하는 프로그램을 작성해봅시다.
