@@ -12,8 +12,7 @@ public class Male extends Person {
 //
 //	④Person 클래스에 생성자를 정의해서 인스턴스 변수들을 초기화 해봅시다.
 
-	String name;
-	String juminNum;
+
 	String gender;
 	
 	public Male(String name, String juminNum) {
