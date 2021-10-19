@@ -1,4 +1,4 @@
-package chapther07;
+package chapter07;
 
 public class HybridWaterCar extends HybridCar {
 	int waterGuage;

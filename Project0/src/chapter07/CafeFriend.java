@@ -1,4 +1,4 @@
-package chapther07;
+package chapter07;
 
 // 추상 클래스를 상속해서 새로운 클래스를 정의
 public class CafeFriend extends Friend {

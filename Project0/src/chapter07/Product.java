@@ -1,4 +1,4 @@
-package chapther07;
+package chapter07;
 
 // 상속을 목적으로 만드는 기본 클래스
 // 상위 개념의 객체 표현 : 변수, 메소드

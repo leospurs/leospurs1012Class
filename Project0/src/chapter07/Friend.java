@@ -1,4 +1,4 @@
-package chapther07;
+package chapter07;
 
 // 추상 클래스로 만들기: 추상 메소드 생성
 

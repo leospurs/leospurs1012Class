@@ -1,4 +1,4 @@
-package chapther07;
+package chapter07;
 
 public interface Menu {
 	
