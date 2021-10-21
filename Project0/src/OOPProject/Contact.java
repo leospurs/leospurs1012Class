@@ -62,6 +62,7 @@ public class Contact {
 		this.group = group;
 	}
 	
+	//  생성자
 	public Contact() {
 
 		this.setName(name);
@@ -72,6 +73,7 @@ public class Contact {
 		this.setGroup(group);
 	}
 	
+	// 정보 출력 메소드
 	public void printAll(Contact contact) {
 		
 		System.out.println("=============================");
@@ -94,7 +96,7 @@ public class Contact {
 		System.out.println(contact.getGroup());
 		System.out.println("=============================");
 	}
-	
+	// 정보 입력 메소드
 	public void insert(Contact contact, Scanner scanner) {
 		System.out.println("이름을 입력하세요.");
 		System.out.print("> ");

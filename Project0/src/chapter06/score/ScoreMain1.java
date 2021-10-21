@@ -11,7 +11,7 @@ public class ScoreMain1 {
 		manager.insertScore(new Student("황희찬",60,100,80));
 		
 		// 2. 데이터 전체 출력
-		manager.showAll();
+		manager.showAllData();
 		
 		// 3. 데이터 검색
 //		manager.searchData("손흥민");
@@ -23,7 +23,7 @@ public class ScoreMain1 {
 //		manager.deleteScore("이강인");
 		
 		// 5. 데이터 검색 또는 데이터 전체 출력
-		manager.showAll();
+		manager.showAllData();
 		
  	}
 }

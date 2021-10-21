@@ -21,7 +21,7 @@ public class ScoreMain2 {
 			break;
 		case 2:
 			System.out.println("전체 데이터를 출력합니다.");
-			manager.showAll();
+			manager.showAllData();
 			break;
 		case 3:
 			System.out.println("학생 정보를 검색합니다.");
