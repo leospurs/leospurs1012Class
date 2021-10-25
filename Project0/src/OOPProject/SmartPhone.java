@@ -60,9 +60,6 @@ public class SmartPhone {
 	// 전체 목록 출력 메소드
 	public void showAllData() {
 		System.out.println("연락처 리스트("+num+"명)");
-		System.out.println("-------------------------------");
-		System.out.println("이름 \t전화번호 \t 이메일 \t 주소 \t 생일 \t 그룹");
-		System.out.println("-------------------------------");
 
 		for (int i = 0; i < num; i++) {
 			arr[i].printContact();;
@@ -109,12 +106,12 @@ public class SmartPhone {
 				String group = scanner.nextLine();
 				
 				// Contact 객체
-				arr[num].setName(uname);
-				arr[num].setPhoneNum(phoneNum);
-				arr[num].setEmail(email);
-				arr[num].setAddress(address);
-				arr[num].setBirthday(birthday);
-				arr[num].setGroup(group);
+				arr[index].setName(uname);
+				arr[index].setPhoneNum(phoneNum);
+				arr[index].setEmail(email);
+				arr[index].setAddress(address);
+				arr[index].setBirthday(birthday);
+				arr[index].setGroup(group);
 				
 				System.out.println("정보가 수정되었습니다.");
 			}

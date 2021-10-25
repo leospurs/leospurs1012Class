@@ -59,22 +59,25 @@ public class Contact {
 	// 생성자
 	public Contact(String name, String phoneNum, String email, String address, String birthday, String group) {
 
-		this.setName(name);
-		this.setPhoneNum(phoneNum);
-		this.setEmail(email);
-		this.setAddress(address);
-		this.setBirthday(birthday);
-		this.setGroup(group);
+		this.name = name;
+		this.phoneNum = phoneNum;
+		this.email = email;
+		this.address = address;
+		this.birthday = birthday;
+		this.group = group;
 	}
 
 	public Contact() {
 	}
 
+	
+	
 	@Override
 	public String toString() {
-		return name + "\t" + phoneNum + "\t" + email + "\t" + address + "\t" + birthday + "\t"+ group;
+		return "Contact [name=" + name + ", phoneNum=" + phoneNum + ", email=" + email + ", address=" + address
+				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
-	
+
 	public void printContact() {
 		System.out.println("이름 : " + name);
 		System.out.println("전화번호 : " + phoneNum);
