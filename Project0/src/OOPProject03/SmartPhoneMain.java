@@ -6,14 +6,6 @@ public class SmartPhoneMain {
 
 	public static void main(String[] args) {
 		
-//		main()메소드를아래의요구조건을정의해봅니다.
-//		1 SmartPhone 클래스의 인스턴스를 생성합니다.
-//		2 사용자로부터 입력을 받아 Contact 인스턴스를 생성해서 SmartPhone 클래스의 인스턴스가 가지고 있는 배열에 추가합니다. 
-//		3 10번 반복해서 배열에 추가합니다.
-//		4 배열의 모든 요소를 출력합니다.
-//		5 배열의 모든 요소를 검색합니다.
-//		6 배열의 요소를 삭제해 봅시다.
-//		7 배열의 요소를 수정해 봅시다.
 		
 		SmartPhone sPhone = new SmartPhone(10);
 		Scanner scanner = new Scanner(System.in);
