@@ -26,7 +26,7 @@ public class Person implements Comparable<Person> {
 			return this.name.compareTo(o.name);
 		}
 		
-		
+	
 		
 		// return this.age - o.age;
 		// return -(this.age - o.age); -> 정렬을 역순으로 출력
