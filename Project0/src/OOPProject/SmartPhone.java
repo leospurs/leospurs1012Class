@@ -17,18 +17,17 @@ public class SmartPhone {
 		num = 0;
 	}
 	
-	public SmartPhone()	 {
-		this(10);
-	}
-
-	// 정보 입력 및 저장 메소드
+	// 배열에 요소를 추가하는 메소드
 	public void insert(Contact c) {
 		arr[num++] = c;
 	}
 	
 	
 	public void insertContact() {
-
+		
+		System.out.println("연락처 등록을 시작합니다.");
+		System.out.println("------------------------");
+	
 		System.out.println("이름을 입력하세요.");
 		System.out.print("> ");
 		String name = scanner.nextLine();
@@ -54,18 +53,19 @@ public class SmartPhone {
 		String group = scanner.nextLine();
 
 		insert(new Contact(name, phoneNum, email, address, birthday, group));
+		
 		System.out.println("연락처가 등록되었습니다.");
 	}
 
-	// 전체 출력 메소드
+	// 전체 목록 출력 메소드
 	public void showAllData() {
-		System.out.println("연락처 정보 리스트");
+		System.out.println("연락처 리스트("+num+"명)");
 		System.out.println("-------------------------------");
 		System.out.println("이름 \t전화번호 \t 이메일 \t 주소 \t 생일 \t 그룹");
 		System.out.println("-------------------------------");
 
 		for (int i = 0; i < num; i++) {
-			System.out.println(arr[i]);
+			arr[i].printContact();;
 		}
 		System.out.println("-------------------------------");
 	}
@@ -74,15 +74,19 @@ public class SmartPhone {
 	public void update() {
 		System.out.println("수정하려는 이름을 입력해주세요.");
 		System.out.println("> ");
-		String searchName = scanner.nextLine();
+		String name = scanner.nextLine();
+		
+		int index = searchIndex(name);
 
-		for (int i = 0; i < num; i++) {
+		
 			
-			if (searchName.equals(arr[i].getName())) {
-				num--;
+			if (index < 0) {
+				System.out.println("찾으시는 정보가 존재하지 않습니다.");
+			} else {
+				
 				System.out.println("새 이름을 입력하세요.");
 				System.out.print("> ");
-				String name = scanner.nextLine();
+				String uname = scanner.nextLine();
 
 				System.out.println("새 전화번호를 입력하세요.");
 				System.out.print("> ");
@@ -104,14 +108,21 @@ public class SmartPhone {
 				System.out.print("> ");
 				String group = scanner.nextLine();
 				
+				// Contact 객체
+				arr[num].setName(uname);
+				arr[num].setPhoneNum(phoneNum);
+				arr[num].setEmail(email);
+				arr[num].setAddress(address);
+				arr[num].setBirthday(birthday);
+				arr[num].setGroup(group);
 				
-				
-			} else {
-				System.out.println("해당 사용자 이름은 존재하지 않습니다.");
+				System.out.println("정보가 수정되었습니다.");
 			}
+				
+			
 		}
 
-	}
+	
 
 	// 삭제 메소드
 	public void delete() {

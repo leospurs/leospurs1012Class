@@ -15,7 +15,7 @@ public class SmartPhoneMain {
 //		6 배열의 요소를 삭제해 봅시다.
 //		7 배열의 요소를 수정해 봅시다.
 		
-		SmartPhone sPhone = new SmartPhone();
+		SmartPhone sPhone = new SmartPhone(10);
 		Scanner scanner = new Scanner(System.in);
 		
 		
