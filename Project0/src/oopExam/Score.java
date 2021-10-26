@@ -1,4 +1,4 @@
-package OOPExam;
+package oopExam;
 
 public class Score {
 	public static void main(String[] args) {

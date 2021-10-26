@@ -1,4 +1,4 @@
-package Exam07;
+package exam07;
 
 public class Female extends Person {
 

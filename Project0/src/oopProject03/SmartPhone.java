@@ -1,4 +1,4 @@
-package OOPProject02;
+package oopProject03;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class SmartPhone {
 	}
 	
 	
-	public void insertContact() {
+	public void insertContact(int select) {
 		
 		System.out.println("연락처 등록을 시작합니다.");
 		System.out.println("------------------------");
@@ -51,8 +51,42 @@ public class SmartPhone {
 		System.out.println("그룹을 입력하세요.");
 		System.out.print("> ");
 		String group = scanner.nextLine();
-
-		insert(new Contact(name, phoneNum, email, address, birthday, group));
+		
+		if(select == 1) { // 그룹이 회사일 경우
+			
+			System.out.println("회사이름을 입력하세요.");
+			System.out.println("> ");
+			String companyName = scanner.nextLine();
+			
+			System.out.println("부서 이름을 입력하세요.");
+			System.out.println("> ");
+			String depName = scanner.nextLine();
+			
+			System.out.println("직급을 입력하세요.");
+			System.out.println("> ");
+			String position = scanner.nextLine();
+			
+			insert(new CompanyContact(name, phoneNum, email, address, birthday, group, companyName, depName, position));
+		}  else { // 그룹이 고객일 경우
+			
+			System.out.println("고객사이름을 입력하세요.");
+			System.out.println("> ");
+			String clientCompanyName = scanner.nextLine();
+			
+			System.out.println("거래 품목을 입력하세요.");
+			System.out.println("> ");
+			String item = scanner.nextLine();
+			
+			System.out.println("직급을 입력하세요.");
+			System.out.println("> ");
+			String position = scanner.nextLine();
+			
+			insert(new CustomerContact(name, phoneNum, email, address, birthday, group, clientCompanyName, item, position));
+			
+		}
+		
+		
+		
 		
 		System.out.println("연락처가 등록되었습니다.");
 	}
@@ -62,7 +96,9 @@ public class SmartPhone {
 		System.out.println("연락처 리스트("+num+"명)");
 
 		for (int i = 0; i < num; i++) {
-			arr[i].printContact();;
+			System.out.println("---------------------------");
+			arr[i].printContact();
+			
 		}
 		System.out.println("-------------------------------");
 	}
@@ -105,13 +141,61 @@ public class SmartPhone {
 				System.out.print("> ");
 				String group = scanner.nextLine();
 				
-				// Contact 객체
-				arr[index].setName(uname);
-				arr[index].setPhoneNum(phoneNum);
-				arr[index].setEmail(email);
-				arr[index].setAddress(address);
-				arr[index].setBirthday(birthday);
-				arr[index].setGroup(group);
+				if(arr[index] instanceof CompanyContact) {
+					
+					CompanyContact company = (CompanyContact) arr[index];
+					
+					System.out.println("새 회사이름을 입력하세요.");
+					System.out.println("> ");
+					String companyName = scanner.nextLine();
+					
+					System.out.println("새 부서 이름을 입력하세요.");
+					System.out.println("> ");
+					String depName = scanner.nextLine();
+					
+					System.out.println("새 직급을 입력하세요.");
+					System.out.println("> ");
+					String position = scanner.nextLine();
+					
+					company.setName(uname);
+					company.setPhoneNum(phoneNum);
+					company.setEmail(email);
+					company.setAddress(address);
+					company.setBirthday(birthday);
+					company.setGroup(group);
+					company.setCompanyName(companyName);
+					company.setDepName(depName);
+					company.setPosition(position);
+					
+				} else {
+					
+					CustomerContact customer = (CustomerContact) arr[index];
+					
+					System.out.println("새 고객사이름을 입력하세요.");
+					System.out.println("> ");
+					String	clientCompanyName = scanner.nextLine();
+					
+					System.out.println("새 거래품목 이름을 입력하세요.");
+					System.out.println("> ");
+					String item = scanner.nextLine();
+					
+					System.out.println("새 직급을 입력하세요.");
+					System.out.println("> ");
+					String position = scanner.nextLine();
+					
+					customer.setName(uname);
+					customer.setPhoneNum(phoneNum);
+					customer.setEmail(email);
+					customer.setAddress(address);
+					customer.setBirthday(birthday);
+					customer.setGroup(group);
+					customer.setClientCompanyName(clientCompanyName);
+					customer.setItem(item);
+					customer.setPosition(position);
+					
+				}
+				
+				
 				
 				System.out.println("정보가 수정되었습니다.");
 			}

@@ -1,4 +1,4 @@
-package OOPProject03;
+package oopProject03;
 
 public class CompanyContact extends Contact {
 

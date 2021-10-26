@@ -1,4 +1,4 @@
-package OOPProject03;
+package oopProject02;
 
 public class Contact {
 	private String name;

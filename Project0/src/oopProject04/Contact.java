@@ -1,4 +1,4 @@
-package OOPProject04;
+package oopProject04;
 
 public abstract class Contact implements ShowData {
 	private String name;

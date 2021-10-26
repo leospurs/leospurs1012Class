@@ -1,4 +1,4 @@
-package OOPProject03;
+package oopProject04;
 
 public class CustomerContact extends Contact {
 

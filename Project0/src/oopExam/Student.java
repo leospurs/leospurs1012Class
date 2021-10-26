@@ -1,4 +1,4 @@
-package OOPExam;
+package oopExam;
 
 public class Student {
 
