@@ -1,6 +1,8 @@
 -- 43. 사원 번호가 7788인 사원과 담당 업무가 같은 사원을 표시(사원 이름과 담당업무)하시오.
+
 -- 사원번호가 7788인 사원
 select job from emp where empno = '7788';
+
 -- 담당 업무가 같은 사원의 이름과 담당업무를 표시
 select ename, job
 from emp
@@ -9,9 +11,10 @@ where job in(select job from emp where empno = '7788')
 
 
 -- 44. 사원번호가 7499인 사원보다 급여가 많은 사원을 표시하시오. 
+
 -- 사원번호가 7499인 사원의 급여
 select sal from emp where empno = '7499';
--- 7499보다 급여가 많은 사원
+
 select ename, job 
 from emp
 where sal > (select sal from emp where empno = '7499')
@@ -20,18 +23,28 @@ where sal > (select sal from emp where empno = '7499')
 
 
 -- 45. 최소급여를 받는 사원의 이름, 담당업무 및 급여를 표시하시오. (그룹함수 사용)
+
+-- 최소급여
+select min(sal) from emp;
+
 select ename, job, sal 
 from emp
 where sal = (select min(sal) from emp)
 ;
 
+
 -- 46. 평균급여가 가장 적은 직급의 직급 이름과 직급의 평균을 구하시오.
+
+-- 부서별 평균 최소값
+select avg(sal)
+from emp
+group by job
+;
+
+
 select job,avg(sal) from emp 
 group by job
 having avg(sal) = (select min(avg(sal)) from emp group by job);
-
-
-
 
 
 
@@ -41,7 +54,10 @@ from emp
 where sal = any(select min(sal) from emp group by job)
 ;
 
+
+
 -- 48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 업무가 ANALYST가 아닌 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
+
 -- 담당업무가 ANALYST인 사원의 급여
 select distinct(sal) from emp where job='ANALYST';
 
@@ -50,8 +66,9 @@ from emp
 where sal < (select distinct(sal) from emp where job='ANALYST') and  job != 'ANALYST'
 ;
 
--- 49. 부하직원이 없는 사원의 이름을 표시하시오.
 
+
+-- 49. 부하직원이 없는 사원의 이름을 표시하시오.
 
 
 
@@ -69,16 +86,21 @@ from emp
 where deptno=(select deptno from emp where ename='BLAKE') and ename != 'BLAKE';
 
 
+
+
 -- 52. 급여가 평균 급여보다 많은 사원들의 사원 번호와 이름을 표시하되 
 -- 결과를 급여에 대해서 오름차순으로 정렬하시오.
 
 -- 평균 급여
 select avg(sal) from emp;
 
+
 select empno, ename
 from emp
 where sal > (select avg(sal) from emp)
 order by sal;
+
+
 
 
 -- 53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
@@ -87,13 +109,12 @@ select ename
 from emp
 where ename LIKE '%K%';
 
-
 select empno, ename 
 from emp
 where deptno IN(select ename
                 from emp
-                where ename LIKE '%K%')
-;
+                where ename LIKE '%K%');
+
 
 
 -- 54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
