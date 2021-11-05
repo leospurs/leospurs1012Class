@@ -13,7 +13,7 @@ desc phoneInfo_basic
 create table phoneInfo_univ(
     idx number(6) constraint phoneInfo_univ_pk PRIMARY KEY,
     fr_u_major varchar2(20) default 'N',
-    fr_u_year number(1) default 1 constraint phoneInfo_univ_ck  check (fr_u_year between 0 and 5) ,
+    fr_u_year number(1) default 1 constraint phoneInfo_univ_ck  check (fr_u_year between 1 and 4) ,
     fr_ref number(7) constraint phoneInfo_univ_fk REFERENCES phoneInfo_basic(idx)
 
 );
