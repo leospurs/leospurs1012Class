@@ -110,7 +110,7 @@ public class UserViewer {
 	private void updateMyInfo() {
 		int logInId = logger.LoginUser.loginId;
 		System.out.println("회원정보 수정을 시작합니다.");
-		System.out.println("정말로 수정하시겠습니까? 수정하시려면 이전 비밀번호를 입력해주세요.");
+		System.out.println("정말로 수정하시겠습니까? 수정하시려면 비밀번호를 입력해주세요.");
 		String password = ScannerUtil.getString();
 
 		if (userController.userDao.passwordChk(password)) {

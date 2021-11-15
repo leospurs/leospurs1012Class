@@ -15,53 +15,48 @@ public class BookController {
 	}
 
 	// list 출력
-	public void printList(List<Book> bookList) {
+	private void printList(List<Book> bookList) {
 		System.out.println("=======================================");
 		System.out.println("\t\t도서 리스트");
-		
-		for(Book b : bookList) {
+
+		for (Book b : bookList) {
 			System.out.println("---------------------------------------");
 			b.showInfo();
 		}
-		
+
 		System.out.println("=======================================\n");
 	}
-	
+
 	// 전체 목록 출력
 	public void showAll() {
-		List<Book> bookList = new ArrayList<>();
-		bookList = bookDao.selectAllList();
+		List<Book> bookList = bookDao.selectAllList();
 		printList(bookList);
 	}
 
 	// 카테고리 번호로 검색
 	public void selectByCategory(int categoryId) {
-		List<Book> bookList = new ArrayList<>();
-		bookList = bookDao.selectByCategory(categoryId);
+		List<Book> bookList = bookDao.selectByCategory(categoryId);
 		printList(bookList);
 	}
 
 	// 책의 제목으로 검색
 	public void selectByName(String bookName) {
-		List<Book> bookList = new ArrayList<>();
-		bookList = bookDao.selectByBookName(bookName);
+		List<Book> bookList = bookDao.selectByBookName(bookName);
 		printList(bookList);
 	}
 
 	// 책의 저자명으로 검색
 	public void selectByWriter(String writer) {
-		List<Book> bookList = new ArrayList<>();
-		bookList = bookDao.selectByWriter(writer);
+		List<Book> bookList = bookDao.selectByWriter(writer);
 		printList(bookList);
 	}
 
 	// 출판사명으로 검색
 	public void selectByPublisher(String publisher) {
-		List<Book> bookList = new ArrayList<>();
-		bookList = bookDao.selectByWriter(publisher);
+		List<Book> bookList = bookDao.selectByPublisher(publisher);
 		printList(bookList);
 	}
-
+	
 	// 도서 등록 메소드
 	public void insertBook(Book book) {
 		bookDao.insertBook(book);
@@ -78,33 +73,31 @@ public class BookController {
 	}
 
 	// 책 구입 메소드(오버로딩) -- 지명근
-	public boolean buyBook(int bookId) {		
+	public boolean buyBook(int bookId) {
 		boolean result = false;
-		
+
 		// 책 재고확인
 		if (bookDao.isThereBook(bookId)) {
 			result = true; // 남아있을시 구입
 			bookDao.saleBook(bookId);
-		} else {
-			result = false; // 없을 시
-		}
+		} 
+
 		return result;
 	}
 
-	/*
-	public boolean buyBook(String bookTitle) {
+	// 책 구입 메소드(오버로딩) - 책제목으로
+	public boolean buyBook(String bookName) {
 		boolean result = false;
-		int bookId = bookDao.getBookId(bookTitle);
-		// 책 재고확인
+		int bookId = bookDao.getBookId(bookName);
+		
+		// 책 재고확인 후 재고가 있으면 구입
 		if (bookDao.isThereBook(bookId)) {
 			result = true; // 남아있을시 구입
 			bookDao.saleBook(bookId);
-		} else {
-			result = false; // 없을 시
-		}
+		} 
+		
 		return result;
 	}
-	*/
 
 	// 유저 책 구매내역
 //	public void userOrderDetail() {
@@ -124,8 +117,7 @@ public class BookController {
 
 	// 랜덤 도서 추천
 	public void showRandomBook() {
-		Book book = new Book();
-		book = bookDao.randomBook();
+		Book book = bookDao.randomBook();
 		System.out.println("서점에 있는 책 중에서 무작위로 추천드리겠습니다.");
 		System.out.println("==================================================");
 		book.showInfo();

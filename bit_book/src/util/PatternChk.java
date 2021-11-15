@@ -17,7 +17,7 @@ public class PatternChk {
 
 	String rexUserName = "^[a-zA-Z0-9]{4,12}$"; // 아이디 형식
 	String rexPw = "^[a-zA-Z0-9가-힣\\!\\@\\-\\_]{6,20}$"; // 패스워드 형식
-	String rexName = "^[가-힣A-Za-z]{2,30}$"; // 유저 이름 형식
+	String rexName = "^[가-힣A-Za-z]{2,20}$"; // 유저 이름 형식
 	String rexEmail = "^[\\w]{2,12}@[\\w\\.\\_\\-]{2,20}$"; // 이메일 형식
 	String rexPhnum = "^[\\d]{2,3}-[\\d]{3,4}-[\\d]{4}$"; // 번호 형식
 	String rexOrderdate = "^[0-9]{8}"; // 주문일 입력 형식
