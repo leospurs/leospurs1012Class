@@ -20,6 +20,9 @@ public class FootballPlayerMain {
 			System.out.println(list.get(i));
 
 		}
+		
+		
+		
 	}
 
 }
