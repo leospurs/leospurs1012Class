@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입 폼</title>
+</head>
+<body>
+  <h1>회원가입 폼</h1> <br>
+
+  <fieldset>
+    <legend>회원가입 폼</legend>
+    <table>
+      <tr>
+        <tr>
+          <td>순번</td>
+          <td>
+            <input type="text" value="11"
+            readonly>
+          </td>
+        </tr>
+        <td><label for="email">아이디(이메일)</label></td>
+        <td><input type="email" name="email" id="email"
+                    required
+                    placeholder="아이디를 입력하세요."
+                    autofocus
+                    minlength="3"></td>
+
+      </tr>
+      <tr>
+        <td><label for="pw">비밀번호</label></td>
+        <td><input type="password" name="password" id="pw"></td>
+      </tr>
+      <tr>
+        <td><label for="name">이름</label></td>
+        <td><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <td>사진</td>
+        <td><input type="file"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="회원가입"></td>
+      </tr>
+
+
+
+
+    </table>
+
+  </fieldset>
+</body>
+</html>
