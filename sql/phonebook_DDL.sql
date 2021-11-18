@@ -64,6 +64,7 @@ set fr_name='SON', fr_phonenumber='010-7777-5555', fr_email='son@naver.com', fr_
 where  idx = 1
 ;
 
+select * from phoneinfo_basic;
 
 -- delete
 delete from phoneinfo_basic where idx=1;
