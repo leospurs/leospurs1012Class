@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기본 선택자</title>
+  <!--기본 선택자-->
+  <style>
+    /** {
+      background-color: burlywood;
+    }*/
+
+    #title {
+      font-style: italic;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 20px;
+    }
+    body,h1,p {
+      margin: 0;
+    }
+
+    #heager {
+      width: 300px;
+      height: 100px;
+
+      background-color: darkcyan;
+
+      /*margin : 10px,10px,20px,20px top.bottom,left,right*/
+      margin: 0 auto;
+    }
+
+    div#contents {
+      width: 300px;
+      height: 300px;
+
+      background-color: rgb(216, 31, 133);
+
+      /*margin : 10px,10px,20px,20px top.bottom,left,right*/
+      margin: 0 auto;
+    }
+
+    div#footer {
+      width: 300px;
+      height: 100px;
+      margin: 0 auto;
+      background-color: wheat;
+    }
+    div.title {
+      color: white;
+      font-weight: lighter;
+    }
+
+  </style>
+  
+  <style>
+    input[type] {
+      border: 3px solid #000000;
+    }
+    input[type = text] {
+      background-color: teal;
+    }
+    input[type = password] {
+      background-color: wheat;
+    }
+  </style>
+
+  <!-- 범위 한정 선택 : 자손, 후손 -->
+  <style>
+    #header1 h1 {
+      background-color: white;
+      color: red;
+    }
+
+    #section h1 {
+      color: violet;
+    }
+
+    #header1>h1 {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- 동위 선택자 : +, ~ -->
+  <style>
+    #head1+h1 {
+      color: blue;
+    }
+
+    #head1~h2 {
+      background-color: orange;
+    }
+  </style>
+  
+  <!-- 반응 선택자-->
+  <style>
+    
+    h3:hover {
+      color: orangered;
+    }
+
+    h3:active {
+      color: orchid;
+    }
+
+  </style>
+
+  <!-- 상태 선택자-->
+  <style>
+    input:enabled {
+      border: 5px solid #aaaaaa;
+    }
+
+    input:disabled {
+      background-color: orchid;
+    }
+
+    input:focus {
+      background-color: orange;
+      border: 5px solid palegreen;
+    }
+
+    #article {
+      width: 300px;
+      height: 300px;
+
+      overflow: hidden;
+    }
+
+    input[type="checkbox"]:checked+#article {
+      height: 0px;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    li:nth-child(2n) {
+      background-color: goldenrod;
+      color: black;
+    }
+
+    li:nth-child(2n+1) {
+      background-color: cornflowerblue;
+      color: black;
+    }
+
+    li:first-child {
+      background-color: palevioletred;
+      color: white;
+      border-radius: 40px 0px 0px 40px;
+    }
+    li:last-child {
+      background-color: palevioletred;
+      color: white;
+      border-radius: 0px 40px 40px 0px;
+    }
+    
+    /* 리스트 태그를 수평방향으로 나열 */
+    ul {
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      padding: 10px 30px;
+    }
+
+    #photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #760c80 ;
+    }
+
+  </style>
+
+  <!--링크 선택자-->
+  <style>
+
+    a:link {
+      color: green;
+    }
+
+    a:visited {
+      color: green;
+    }
+    a:hover {
+      color: rgb(0, 0, 0);
+      text-decoration: line-through;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <a href="https://www.naver.com">네이버</a>
+
+
+  <hr>
+  <a href="https://www.naver.com"><img id="photo" src="images/imi3.jpeg"></a>
+
+  <hr>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+
+
+
+
+
+  <hr>
+
+  <label for="btn">기사 가리기 </label><input id="btn" type="checkbox">
+  <div id="article">
+    <h1>‘지단의 맨유’ 라인업 떴다… ‘15분 출전’ 외면받던 MF 기용 가능성↑</h1>
+    <p>영국 매체 ‘익스프레스’는 16일(한국 시간) 지단 감독이 올레 군나르 솔샤르 감독을 대신해 맨유에 부임할 경우, 
+      오는 21일 왓포드FC전에서 꾸릴 수 있는 베스트11을 공개했다.</p>
+  </div>
+
+
+  <hr>
+
+  <input> <input disabled> 
+
+
+
+
+  <h3>반응 선택자</h3>
+
+
+
+  <hr>
+
+  <h1 id="head1">Header1 - 1</h1>
+  <h1>Header1 - 2</h1>
+  <h2>Hedaer2 - 1</h2>
+  <h2>Hedaer2 - 2</h2>
+  <h2>Hedaer2 - 3</h2>
+  <h2>Hedaer2 - 4</h2>
+  <h2>Hedaer2 - 5</h2>
+
+
+
+
+
+
+
+
+  <hr>
+
+  <div id="header1">
+    <h1 class="title">제목입니다.</h1>
+    <div id="nav">
+      <h1>네비게이션</h1>
+    </div>
+  </div>
+
+  <div id="section">
+    <h1 class="title">제목2입니다.</h1>
+    <p>내용이 표현됩니다.</p>
+  </div>
+
+
+  <hr>
+
+  <input type="text"> <input type="password">
+
+
+  <hr>
+  <div id="heager">
+    <h1 class="title">HEADER</h1>
+  </div>
+  <div id="contents">
+    <img src="images/imi2.jpeg" width="250p" >
+  </div>
+  <div id="footer"></div>
+
+  <hr>
+  <h1 id="title">애플, '셀프 서비스 수리 제도' 도입..."고객이 직접 배터리 교체"</h1>
+  <p class="bold"> 
+    셀프 서비스 수리를 통해 고객은 애플 부품뿐 아니라 도구, 수리 매뉴얼 등에 접근할 수 있다. 
+    미국에서 내년 초부터 판매할 예정인데 가격은 아직 공개되지 않았다. 우선 아이폰 화면, 배터리, 카메라 등을 교체할 수 있는 
+    서비스를 제공할 것으로 보이며 더 많은 부품들은 향후 출시할 예정이다. 
+    고객은 이를 온라인 스토어를 통해 구매할 수 있다. 사용한 부품을 재활용을 위해 반납하는 고객은 마일리지도 받을 수 있다.
+  </p>
+</body>
+</html>
