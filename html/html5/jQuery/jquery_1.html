@@ -37,6 +37,7 @@
       setTimeout(function(){
         var selectValue = $('select>option:selected').val();
       console.log('selectValue');
+
       var checkedValue = $('input:radio:checked').val();
       console.log('checkedValue',checkedValue)
       },3000);
@@ -66,6 +67,7 @@
       });
 
       console.log(newHtml);
+      
       console.log($('#linkBox').html());
 
       $('#linkBox').html(newHtml);
