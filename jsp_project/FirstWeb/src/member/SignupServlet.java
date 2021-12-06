@@ -19,7 +19,7 @@ public class SignupServlet extends HttpServlet {
 		
 		String uid = request.getParameter("userid");
 		String pw = request.getParameter("pw");
-		String repw = request.getParameter("Repw");
+		String repw = request.getParameter("repw");
 		String name = request.getParameter("userName");
 		System.out.println("userid: " + uid);
 		System.out.println("password: " + pw);
