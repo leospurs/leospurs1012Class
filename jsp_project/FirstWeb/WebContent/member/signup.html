@@ -5,25 +5,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h1>로그인 폼</h1>
+	<h1 align="center"><b>회원가입</h1>
 	<hr>
-	<!--<form action="Login.jsp" method="get">  -->
-	<!--http://localhost:8080/first/member/loginForm.html  -->
-	<!-- http://localhost:8080/first/Login -->
+	
 	<form action="../Signup" method="post">
-		<table>
+		<table align="center">
 			<tr>
 				<td>아이디</td>
 				<td> <input type="text" name="userid" placeholder="아이디를 입력하세요."> </td>
 			</tr>
 			<tr>
-				<td>비밀번호</td>
+				<td>패스워드</td>
 				<td> <input type="password" name="pw" placeholder="비밀번호를 입력하세요."></td>
 			</tr>
 			<tr>
-				<td colspan="2">
-					<input type="submit">
+				<td>패스워드(확인)</td>
+				<td> <input type="password" name="Repw" placeholder="비밀번호를 입력하세요."></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td> <input type="text" name="userName" placeholder="비밀번호를 입력하세요."></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" >
+					<input type="submit" value="회원가입하기">
 				</td>
 			</tr>
 			
@@ -33,9 +38,6 @@
 	
 	
 	</form>
-	
-	
-	
 	
 </body>
 </html>
