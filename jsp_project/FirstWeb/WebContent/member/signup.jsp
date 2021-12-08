@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+		request.setCharacterEncoding("utf-8");
+	%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +12,7 @@
 <body>
 	
 	
-	<%
-		request.setCharacterEncoding("utf-8");
-	%>
+	
 	
 	<h1>ID : <%= request.getParameter("userid") %></h1>
 	<h1>Password : <%= request.getParameter("pw") %></h1>
@@ -37,7 +38,7 @@
 	
 	
 	
-	
+	<a href="loginForm.html">로그인</a>
 	
 	
 	
