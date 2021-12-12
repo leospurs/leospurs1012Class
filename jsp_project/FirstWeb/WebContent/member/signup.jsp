@@ -25,16 +25,19 @@
 	<%
 	
 		String[] interest = request.getParameterValues("interest");
+
 		if(interest == null) {
 			out.println("<h1>Interest : 관심사가 없습니다.</h1>");
 		} else {
 			for(int i=0; i<interest.length; i++) {
 				out.println("<h1>Interest : " + interest[i] + "</h1>");
+				
+				
 			}
 		}
 	%>
 	
-	<h1>Byear : <%= request.getParameter("byear") %></h1>
+	<h1>Birthyear : <%= request.getParameter("byear") %></h1>
 	
 	
 	
