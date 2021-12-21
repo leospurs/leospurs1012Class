@@ -6,3 +6,5 @@
 			<li> <a href="${pageContext.request.contextPath}/dept/reg.do"> 부서 등록 </a> </li>
 		</ul>
 	</nav>
+	
+	
