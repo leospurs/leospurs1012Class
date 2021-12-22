@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<%@ include file="/WEB-INF/views/frame/pageSet.jsp"%>
+<%@ include file="/WEB-INF/views/frame/pageset.jsp"%>
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 
 
 	<!-- Javascript 추가 -->
-	<%@ include file="/WEB-INF/views/frame/footerSet.jsp" %>
+	<%@ include file="/WEB-INF/views/frame/footerset.jsp" %>
 
 </body>
 </html>

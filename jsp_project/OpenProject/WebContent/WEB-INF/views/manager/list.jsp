@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 가입</title>
+<title>회원 리스트</title>
 
 <%@ include file="/WEB-INF/views/frame/pageset.jsp"%>
 
@@ -21,16 +20,37 @@
 	<!-- 네비게이션 끝 -->
 
 	<!-- content 시작 -->
-	<div id="content">
-		<h3>회원 가입</h3>
+	<div>
+		<h3>회원 리스트</h3>
 		<hr>
-		<h3>
+		<div>
+			전체 회원 수: 명, 현재 페이지: 1/4 
+		</div>
+		<table>
+			<tr>
+				<th>idx</th>
+				<th>user ID</th>
+				<th>password</th>
+				<th>user Name</th>
+				<th>photo</th>
+				<th>regdate</th>
+				<th>manage</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+		</table>
+		<div id="paging">
+			1 2 3 4 5 
+		</div>
 		
-		${result eq 1 ? '회원 가입 완료!!' : result eq 0 ? '회원 가입 실패!' : '서버 오류' }
-		
-		</h3>
-	
-	</div>
+	</div>	
 	<!-- content 끝 -->
 
 

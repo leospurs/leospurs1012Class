@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 
-<%@ include file="/WEB-INF/views/frame/pageSet.jsp"%>
+<%@ include file="/WEB-INF/views/frame/pageset.jsp"%>
 
 <style>
 #content>form>table td {
@@ -69,7 +69,7 @@
 
 
 	<!-- Javascript 추가 -->
-	<%@ include file="/WEB-INF/views/frame/footerSet.jsp" %>
+	<%@ include file="/WEB-INF/views/frame/footerset.jsp" %>
 
 </body>
 </html>

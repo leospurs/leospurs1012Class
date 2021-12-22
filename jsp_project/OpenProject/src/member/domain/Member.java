@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 
 public class Member {
 
+	
 	private int idx;
 	private String userid;
 	private String pw;
@@ -83,6 +84,10 @@ public class Member {
 	public String toString() {
 		return "Member [idx=" + idx + ", userid=" + userid + ", pw=" + pw + ", username=" + username + ", regdate="
 				+ regdate + ", photo=" + photo + "]";
+	}
+	
+	public LoginInfo getLoginInfo() {
+		return new LoginInfo(this.userid, this.username, this.photo);
 	}
 
 }
