@@ -16,14 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.BadRequestCommandImpl;
 import service.Command;
 
 public class FrontController extends HttpServlet{
 
 	private Map<String, Command> commands = new HashMap<String, Command>();
-	
-	
-	
 	
 	
 	@Override
@@ -125,32 +123,43 @@ public class FrontController extends HttpServlet{
 		if(commandURI.startsWith(request.getContextPath())) {
 			commandURI = commandURI.substring(request.getContextPath().length());
 		}
+		// http://localhost:8080/mvc/date.do : commandURI => /date.do
+		// http://localhost:8080/mvc/greeting.do : commandURI => /greeting.do
+		
+		
+		
+		
 		
 		
 		// 3. 사용자 요청에 맞는 데이터 처리 : 요청에 따른 분기
 		// 결과 데이터를 생성
 		
 		// 응답 결과 객체
-		Object result = null;	// view 페이지에서 toString()으로 출력
+		// Object result = null;	// view 페이지에서 toString()으로 출력
 		// view page 경로
-		String viewPage = "/WEB-INF/views/simpleview.jsp";
 		
-		if(commandURI.equals("/greeting.do")) {
-			
-			result = "안녕하세요";	// object <- String 타입의 객체
-			viewPage = "/WEB-INF/views/greeting.jsp";
-			
-		} else if(commandURI.equals("/date,do")) {
-			
-			result = new Date();	// object <- date 타입의 객체
-			viewPage = "/WEB-INF/views/greeting.jsp";
-			
-		} else {	// /*.do
-			result = "Invalid Request";
+		
+		Command command = commands.get(commandURI);
+		if(command == null) {
+			command = new BadRequestCommandImpl();
 		}
 		
-		// 4. 결과를 request 객체의 속성에 저장 : view 페이지에 결과 데이터를 공유(전달)
-		request.setAttribute("result", result);
+		
+//		if(commandURI.equals("/greeting.do")) {
+//			
+//			result = "안녕하세요";	// object <- String 타입의 객체
+//			viewPage = "/WEB-INF/views/greeting.jsp";
+//			
+//		} else if(commandURI.equals("/date,do")) {
+//			
+//			result = new Date();	// object <- date 타입의 객체
+//			viewPage = "/WEB-INF/views/greeting.jsp";
+//			
+//		} else {	// /*.do
+//			result = "Invalid Request";
+//		}
+		
+		String viewPage = command.getPage(request, response);
 		
 		// 5. view 페이지를 지정(선택사항) -> 포워딩
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
