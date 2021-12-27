@@ -3,6 +3,7 @@ package member.command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.Command;
 import member.domain.Member;
 import member.service.LoginService;
 
@@ -15,7 +16,8 @@ public class LoginCommandImpl implements Command {
 		
 		if(request.getMethod().equals("GET")) {
 			
-			view = "/WEB-INF/views/member/loginForm.jsp";
+			view = "/WEB-INF/views/member/loginform.jsp";
+			
 		} else if(request.getMethod().equals("POST")) {
 			
 			// Service 클래스에서 반환한 Member객체를 확인

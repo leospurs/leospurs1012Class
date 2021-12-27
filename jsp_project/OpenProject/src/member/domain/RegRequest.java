@@ -12,7 +12,6 @@ public class RegRequest {
 	}
 
 	public RegRequest(String userid, String pw, String username, String fileName) {
-		super();
 		this.userid = userid;
 		this.pw = pw;
 		this.username = username;
