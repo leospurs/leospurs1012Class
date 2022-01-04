@@ -115,7 +115,7 @@ public class FrontController extends HttpServlet{
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 2. 사용자의 요청을 분석 :	URI를 이용한 사용자 요청 분석
-		String commandURI = request.getRequestURI();
+		String commandURI = request.getRequestURI(); 
 		// http://localhost:8080/mvc/simple : commandURI => simple.do
 		// http://localhost:8080/mvc/simple?type=greeting : commandURI => greeting.do
 		
