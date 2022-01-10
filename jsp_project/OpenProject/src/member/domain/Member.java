@@ -8,6 +8,7 @@ import java.sql.Timestamp;
  작업내용 :  사진 파일의 경로를 저장하는 변수 추가
  */
 
+// DTO 클래스
 public class Member {
 
 	

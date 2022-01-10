@@ -1,5 +1,6 @@
 package member.domain;
 
+// 데이터베이스 전송을 위한 클래스 - form에서 받은 데이터 저장
 public class RegRequest {
 
 	private String userid;
@@ -56,7 +57,7 @@ public class RegRequest {
 				+ "]";
 	}
 
-	// RegRequest -> Member
+	// RegRequest -> Member (변환, 사용자에게 받은 정보 외)
 	public Member getMember() {
 		return new Member(0, this.userid, this.pw, this.username, null, null);
 	}

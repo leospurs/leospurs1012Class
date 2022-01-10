@@ -26,7 +26,8 @@ public class MemberDao {
 
 	// Member 객체를 전달 받아 데이터 베이스에 데이터 입력
 	public int insertMember(Connection conn, RegRequest request) throws SQLException {
-
+		
+		//  
 		int resultCnt = 0;
 		PreparedStatement pstmt = null;
 

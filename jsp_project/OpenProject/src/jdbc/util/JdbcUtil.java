@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class JdbcUtil {
 
-	// Connection, Statement, PreparedStatment, ResultSet
+	// Connection, Statement, PreparedStatment, ResultSet을 종료하는 기능을 가진 메소드
 	
 		public static void close(Connection conn) {
 			if(conn != null) {

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 
+<!-- css,js 적용 -->
 <%@ include file="/WEB-INF/views/frame/pageset.jsp"%>
 
 </head>
@@ -24,11 +25,11 @@
 	<div id="content">
 		<h3>회원 가입</h3>
 		<hr>
-		<h3>
+		<h4>
 		
 		${result eq 1 ? '회원 가입 완료!!' : result eq 0 ? '회원 가입 실패!' : '서버 오류' }
 		
-		</h3>
+		</h4>
 	
 	</div>
 	<!-- content 끝 -->
