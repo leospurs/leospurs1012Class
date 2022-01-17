@@ -5,6 +5,17 @@ public class OrderItem {
 	private String itemId;
 	private int number;
 	private String remark;
+	
+	
+	
+	public OrderItem(String itemId, int number, String remark) {
+		super();
+		this.itemId = itemId;
+		this.number = number;
+		this.remark = remark;
+	}
+
+	public OrderItem() {}
 
 	public String getItemId() {
 		return itemId;
