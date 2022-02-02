@@ -43,7 +43,7 @@
 		$('#userid').focusout(function(){
 			
 			$.ajax({
-				url : 'http://locahost:8081/op/member/checkid.do',
+				url : 'checkid', // http://localhost:8080/op/member/chechid
 				type : 'get',
 				data : {
 					userid : $('#userid').val()

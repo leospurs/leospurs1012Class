@@ -27,6 +27,7 @@
 	</beans:bean>
 	
 	<!-- 파일 업로드를 위한 multipartResolver 등록 -->
+	<!-- id 값을 반드시 multipartResolver로 지정해야함 -->
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="defaultEncoding">
@@ -47,7 +48,7 @@
 		</interceptor>
 	</interceptors>
 
-
+	<!-- 지정된 패키지 안의 어노테이션들을  파악하기 위한 context:component-scan 태그 설정 -->
 	<context:component-scan
 		base-package="com.bitcamp.op" />
 	

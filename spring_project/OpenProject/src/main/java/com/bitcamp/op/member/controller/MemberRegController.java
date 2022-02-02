@@ -1,4 +1,4 @@
-package com.bitcamp.op.member.controller;
+ package com.bitcamp.op.member.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ import com.bitcamp.op.member.domain.MemberRegRequest;
 import com.bitcamp.op.member.service.MemberRegService;
 
 @Controller
-@RequestMapping("/member/reg")
+@RequestMapping("/member/reg")	// http://localhost:8080/op/member/reg
 public class MemberRegController {
 	
 	@Autowired

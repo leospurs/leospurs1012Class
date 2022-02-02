@@ -1,17 +1,13 @@
 package com.bitcamp.op.member.service;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import com.bitcamp.op.dao.JdbcTemplateMemberDao;
-import com.bitcamp.op.dao.MemberDao;
+import com.bitcamp.op.member.dao.MemberDao;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberLoginRequest;
 import com.bitcamp.op.member.exception.LoginInvalidException;
@@ -22,8 +18,15 @@ public class MemberLoginService {
 	//@Autowired
 	//private MemberDao dao;
 	
-	@Autowired
-	private JdbcTemplateMemberDao dao;
+	//@Autowired
+	//private JdbcTemplateMemberDao dao;
+	
+	//@Autowired
+	//private MybatisMemberDao dao;
+	
+	private MemberDao dao;
+	
+	private SqlSessionTemplate template;
 	
 	
 
@@ -37,9 +40,11 @@ public class MemberLoginService {
 		//try {
 			//conn = ConnectionProvider.getConnection();
 
-			//member = dao.selectByIdPw(conn, loginRequest.getUserid(), loginRequest.getPw());
-			member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
-
+			// member = dao.selectByIdPw(conn, loginRequest.getUserid(), loginRequest.getPw());
+			// member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
+			// member = dao.selectByIdPw(loginRequest.getLoginParams());
+			member = dao.selectByIDPW(loginRequest.getUserid(), loginRequest.getPw());
+			
 			if (member == null) {
 				throw new LoginInvalidException("아이디 또는 비밀번호가 틀립니다.");
 			}

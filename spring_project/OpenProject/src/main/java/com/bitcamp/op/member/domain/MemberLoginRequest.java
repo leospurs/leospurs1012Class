@@ -44,6 +44,10 @@ public class MemberLoginRequest {
 		return "MemberLoginRequest [url=" + url + ", userid=" + userid + ", pw=" + pw + ", saveid=" + saveid + "]";
 	}
 	
+	// 전달받은 MemberLogin 객체를 userid, pw만 있는 LoginParams 객체로 가공해주는 메소드
+	public LoginParams getLoginParams() {
+		return new LoginParams(userid, pw); 
+	}
 	
 
 }
