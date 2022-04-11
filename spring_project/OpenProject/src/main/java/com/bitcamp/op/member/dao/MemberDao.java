@@ -11,24 +11,29 @@ import com.bitcamp.op.member.domain.SearchParams;
 
 public interface MemberDao {
 
-	// public Member selectByIdPw(LoginParams params);
-	public Member selectByIDPW(String uid, String pw);
+	//public Member selectByIdPw(LoginParams prams);
+		public Member selectByIdPw(String uid, String pw);
+		/* selectByIdPw("cool", "123"); */
+		
+		public Member selectById(String uid);
+		
+		//public int selectTotalCount();
+		public int selectTotalCount(Map<String, String> params);
+		
+		public List<Member> selectList(SearchParams params);
+		//public List<Member> selectList(int count, int index);
+		
+		public int insertMember(MemberRegRequest regRequest);
+		
+		public Member selectByIdx(int idx);
+		
+		public Member2 selectByIdx2(int idx);
 
-	// public int selectTotalCount();
-	public int selectTotalCount(Map<String, String> params);
+		public int deleteByIdx(int memberIdx);
 
-	public List<Member> selectList(SearchParams params);
-	// public List<Member> selectList(int count, int index);
+		public int editMember(EditRequest editRequest);
 
-	public int insertMember(MemberRegRequest regRequest);
+		public int selectCountByUesrId(String userId);
+	
 
-	public Member selectByIdx(int idx);
-
-	public Member2 selectByIdx2(int idx);
-
-	public int deleteByIdx(int memberIdx);
-
-	public int editMember(EditRequest editRequest);
-
-	public int selectCountByUserId(String userid);
 }

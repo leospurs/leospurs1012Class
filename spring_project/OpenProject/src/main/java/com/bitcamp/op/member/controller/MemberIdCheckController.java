@@ -16,8 +16,8 @@ public class MemberIdCheckController {
 	
 	@RequestMapping("/member/checkid")
 	@ResponseBody
-	public String checkId(@RequestParam("userid") String userid) {
+	public String checkId(@RequestParam("userid") String userId) {
 		
-		return checkIdService.checkId(userid) > 0 ? "N" : "Y";
+		return checkIdService.checkId(userId);
 	}
 }

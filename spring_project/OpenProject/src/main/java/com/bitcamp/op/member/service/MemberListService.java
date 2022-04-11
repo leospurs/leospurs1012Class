@@ -40,7 +40,7 @@ public class MemberListService {
 
 			dao = template.getMapper(MemberDao.class);
 
-					// 검색 타입과 검색어를 확인 -> 모든 데이터가 null 이 아니어야 한다
+			// 검색 타입과 검색어를 확인 -> 모든 데이터가 null 이 아니어야 한다
 			// 데이터 중 하나라도 null 이거나 공백이면 searchType->null
 			if (params.getKeyword() == null || params.getKeyword().trim().isEmpty()) {
 				params.setSearchType(null);

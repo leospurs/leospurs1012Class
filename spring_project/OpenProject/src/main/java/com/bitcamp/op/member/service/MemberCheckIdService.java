@@ -14,10 +14,8 @@ public class MemberCheckIdService {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	// userid를 파라미터로 받아 
-	public int checkId(String userid) {
-		
+	public String checkId(String userId) {
 		dao = template.getMapper(MemberDao.class);
-		return dao.selectCountByUserId(userid);
+		return dao.selectCountByUesrId(userId)>0 ? "N" : "Y";
 	}
 }

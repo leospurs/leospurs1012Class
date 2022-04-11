@@ -43,7 +43,7 @@ public class MemberLoginService {
 			// member = dao.selectByIdPw(conn, loginRequest.getUserid(), loginRequest.getPw());
 			// member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
 			// member = dao.selectByIdPw(loginRequest.getLoginParams());
-			member = dao.selectByIDPW(loginRequest.getUserid(), loginRequest.getPw());
+			member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
 			
 			if (member == null) {
 				throw new LoginInvalidException("아이디 또는 비밀번호가 틀립니다.");

@@ -1,35 +1,28 @@
 package chap01;
 
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Max3 {
-	
+
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+		String[] source = { "alex pizze pasta", "bob pizza pasta paste" };
 		
-		System.out.println("최대 정수값을 구합니다.");
-		System.out.println("정수 3개를 입력하세요.");
+		String[] answer = {};
 		
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int c = sc.nextInt();
-		System.out.println("a = " + a);
-		System.out.println("b = " + b);
-		System.out.println("c = " + c);
+		String result = "";
 		
+		StringTokenizer st = new StringTokenizer(result, " ");
 		
-		
-		int max = a;
-		
-		if(b > max) {
-			max = b;
+		for(int i = 0; i<source.length; i++) {
+			
+			result = source[i];
+			
+			System.out.println(result); 
 		}
 		
-		if(c > max) {
-			max = c;
-		}
 		
-		System.out.println("최대값은 " + max + "입니다.");
+		
+
 	}
 }

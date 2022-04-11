@@ -1,5 +1,9 @@
 package com.bitcamp.op.member.domain;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+
 public class Member {
 
 	private int idx;
@@ -8,14 +12,19 @@ public class Member {
 	private String username;
 	private String photo;
 	private String regdate;
+	private String role;
+	private Collection<? extends GrantedAuthority> authorities;
+	
+	public Member() {}
 
-	public Member(int idx, String userid, String password, String username, String photo, String regdate) {
+	public Member(int idx, String userid, String password, String username, String photo, String regdate, String role) {
 		this.idx = idx;
 		this.userid = userid;
 		this.password = password;
 		this.username = username;
 		this.photo = photo;
 		this.regdate = regdate;
+		this.role = role;
 	}
 
 	public int getIdx() {
@@ -64,6 +73,22 @@ public class Member {
 
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+		this.authorities = authorities;
 	}
 
 	@Override

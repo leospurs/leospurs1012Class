@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.bitcamp.op.member.dao.MemberDao;
@@ -26,6 +27,9 @@ public class MemberRegService {
 	
 	@Autowired
 	private SqlSessionTemplate template;
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	// 회원 가입 정보 입력 메소드
 	public int insertMember(MemberRegRequest regRequest, HttpServletRequest request)
